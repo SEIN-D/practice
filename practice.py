@@ -1,13 +1,10 @@
-# def profile(name, age, lang1, lang2, lang3, lang4, lang5):
-#     print("Name: {0}\tAge: {1}\t".format(name, age), \
-#         lang1, lang2, lang3, lang4, lang5)
+gun = 10
 
-def profile(name, age, *language):
-    print("Name: {0}\tAge: {1}\t".format(name, age), end=" ")
-    for lang in language:
-        print(lang, end=" ")
-    print()
+def checkpoint(soldiers):
+    gun = 20
+    gun = gun - soldiers
+    print("[in function] Guns left: {0}".format(gun))
 
-
-profile("A", 20, "Python", "Java", "C", "C++", "C#", "Javas")
-profile("B", 25, "Kotlin", "Swift", "", "", "")
+print("Total Guns: {0}".format(gun))
+checkpoint(2)
+print("Guns left: {0}".format(gun))
