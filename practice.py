@@ -1,25 +1,34 @@
-def std_weight(height, gender):
-    if gender == "male":
-        return height * height * 22
-    else:
-        return height * height * 21
-        
-height, gender = float(input()), input()
-weight = round(std_weight(height/100, gender), 2)
-print("Standard weight of {0} cm {1} is {2} kg.".format(height, gender, weight))
+score_file = open("score.txt","w", encoding="utf8")
+print("수학: 0", file=score_file)
+print("영어: 50", file=score_file)
+score_file.close()
 
-import sys
-print("Python", "Java", file=sys.stdout)
-print("Python", "Java", file=sys.stderr)
+score_file = open("score.txt", "a", encoding="utf8")
+score_file.write("과학: 80")
+score_file.write("\n코딩: 100")
+score_file.close()
 
-score = {"Math":0, "English":50, "Coding":100}
-for subject, score in score.items():
-    # print(subject, score)
-    print(subject.ljust(10), str(score).rjust(4), sep=":")
+score_file = open("score.txt", "r", encoding="utf8")
+print(score_file.read())
+score_file.close()
 
-for num in range(1, 21):
-    print("Waiting Number: " + str(num).zfill(3))
+score_file = open("score.txt", "r", encoding="utf8")
+print(score_file.readline(), end="")
+print(score_file.readline(), end="")
+print(score_file.readline(), end="")
+print(score_file.readline(), end="")
+score_file.close()
 
-answer = input("Type any input value: ")
-print(type(answer))
-print("Input value is {0}.".format(answer))
+score_file = open("score.txt", "r", encoding="utf8")
+while True:
+    line = score_file.readline()
+    if not line:
+        break
+    print(line, end="")
+score_file.close()
+
+score_file = open("score.txt", "r", encoding="utf8")
+lines = score_file.readlines()
+for line in lines:
+    print(line, end="")
+score_file.close()
