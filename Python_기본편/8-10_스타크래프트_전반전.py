@@ -54,7 +54,7 @@ class Tank(AttackUnit):
             return
         
         # 현재 시즈모드가 아닐 떄 -> 시즈모드
-        elif self.seize_mode == False:
+        if self.seize_mode == False:
             print("{0}: Enable seize mode.".format(self.name))
             self.seize_mode = True
             self.damage *= 2
